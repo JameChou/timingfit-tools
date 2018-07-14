@@ -15,15 +15,14 @@ def readData(list):
     fetchDataCount = 0
     duplicateCount = 0
     emails = []
-    csv_file = open('all_area.csv', 'a')
+    csv_file = open('all_area_playitagain.csv', 'a')
     writer = csv.writer(csv_file)
     #writer.writerow(['name', 'address', 'email'])
     for file in list:
-        csv_file = csv.reader(open('/Volumes/Code/code_archive/yellowpages/results/yellowpages' + file, 'r'))
+        csv_file = csv.reader(open('/Volumes/Code/code_archive/yellowpages/results/playitagainsports/' + file, 'r'))
         for i in csv_file:
             name = i[0]
-            address = i[1]
-            email = i[4]
+            email = i[2]
             fetchDataCount = fetchDataCount + 1
             if email == 'none':
                 continue
@@ -39,6 +38,5 @@ def readData(list):
 
 
 if __name__ == "__main__":
-    list = file_name('/Volumes/Code/code_archive/yellowpages/results')
+    list = file_name('/Volumes/Code/code_archive/yellowpages/results/playitagainsports')
     readData(list)
-
